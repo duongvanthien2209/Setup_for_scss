@@ -1,0 +1,58 @@
+@import '../default/default.scss';
+
+.small-banner {
+    padding: 3rem 0;
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            transition: all 0.3s;
+        }
+
+        &__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            height: 100%;
+            width: 100%;
+
+            padding-left: 1rem;
+
+            h4 {
+                font: {
+                    size: 2.5rem;
+                    weight: 700;
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+            
+            button {
+                @extend %button;
+
+                font: {
+                    size: 1.3rem;
+                    weight: 500;
+                }
+
+                color: $text-color;
+            }
+        }
+    }
+
+    &__item:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}

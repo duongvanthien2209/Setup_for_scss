@@ -1,0 +1,157 @@
+@import '../default/default.scss';
+
+.top-bar {
+    padding: .5rem;
+    background-color: #f5f5f5;
+
+    .container {
+        // @extend %container;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin-bottom: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $text-color;
+        }
+
+        ul {
+            @extend %ul;
+            display: flex;
+
+            button {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.top-nav-bar {
+    padding: 1.5rem 0;
+
+    $parent: &;
+
+    .container {
+        display: flex;
+        align-items: center;
+        // @extend %container;
+
+        #{$parent}__search {
+            display: flex;
+            align-items: center;
+            padding: 0 .5rem;
+
+            button {
+                font-size: 1.2rem;
+                color: $text-color;
+            }
+
+            input {
+                padding: .5rem 1rem;
+
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: $text-color;
+
+                border: none;
+            }
+        }
+
+        #{$parent}__brand {
+            flex-grow: 1;
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        #{$parent}__items {
+            @extend %ul;
+
+            display: flex;
+
+            #{$parent}__item {
+                display: flex;
+                align-items: center;
+
+                &__icon {
+                    padding: 1rem;
+                    margin-right: .5rem;
+                }
+
+                &__content {
+
+                    p,
+                    span {
+                        margin-bottom: 0;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                    }
+
+                    span {
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-bar {
+    background-color: #f5f5f5;
+
+    .navbar {
+
+        .row {
+
+            align-items: center;
+
+            .navbar__categories {
+                @extend %button;
+
+                padding: 1rem;
+                background-color: #7E4C4F !important;
+                font-size: 1.2rem;
+            }
+
+            .navbar-nav {
+                flex-direction: row;
+                justify-content: space-between;
+
+                .nav-link {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: $text-color;
+                }
+            }
+
+            .navbar__cart {
+                @extend %button;
+
+                font-size: 1.2rem;
+                padding: .5rem 1.5rem;
+                background-color: #fff !important;
+            }
+        }
+    }
+}
+
+.bottom-bar {
+    padding: 1.5rem 0;
+
+    .col-md-3 {
+        p {
+            padding: .5rem 0;
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+}
